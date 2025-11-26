@@ -11,7 +11,6 @@ class UserBank extends Model
         'user_id',
         'bank_name',
         'iban',
-        'account_holder'
     ];
 
     public function user(): BelongsTo

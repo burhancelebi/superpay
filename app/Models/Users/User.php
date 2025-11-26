@@ -4,7 +4,6 @@ namespace App\Models\Users;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use App\Enums\ActiveEnum;
-use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -38,15 +37,9 @@ class User extends Authenticatable
         'remember_token',
     ];
 
-    /**
-     * @return Attribute
-     */
-    protected function active(): Attribute
-    {
-        return Attribute::make(
-            get: fn ($value) => ActiveEnum::tryFrom($value),
-        );
-    }
+    protected $casts = [
+        'active' => ActiveEnum::class,
+    ];
 
     /**
      * Get the attributes that should be cast.
@@ -74,6 +67,6 @@ class User extends Authenticatable
      */
     public function isActive(): bool
     {
-        return $this->active == ActiveEnum::ACTIVE->value;
+        return $this->active->value == ActiveEnum::ACTIVE->value;
     }
 }

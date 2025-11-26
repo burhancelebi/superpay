@@ -9,7 +9,7 @@
 
                     <div class="widget widget_about">
                         <div class="logo-footer clearfix">
-                            <a href="index.html"><img src="https://thewebmax.org/jobzilla/images/logo-light-2.png" alt=""></a>
+                            <a href="index.html"><img src="{{ asset(getSettingByKey('logo-image')?->value) }}" alt=""></a>
                         </div>
                         <p>Many desktop publishing packages and web page editors now.</p>
                         <ul class="ftr-list">

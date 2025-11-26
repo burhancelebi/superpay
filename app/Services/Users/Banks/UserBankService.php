@@ -2,6 +2,7 @@
 
 namespace App\Services\Users\Banks;
 
+use App\DTO\Users\UserBankDTO;
 use App\Models\Users\UserBank;
 use App\Repositories\Users\Banks\UserBankRepositoryInterface;
 use Illuminate\Database\Eloquent\Collection;
@@ -25,12 +26,12 @@ class UserBankService implements UserBankServiceInterface
     }
 
     /**
-     * @param array $data
+     * @param UserBankDTO $bankDTO
      * @return UserBank
      */
-    public function create(array $data): UserBank
+    public function create(UserBankDTO $bankDTO): UserBank
     {
-        return $this->userBankRepository->create($data);
+        return $this->userBankRepository->create($bankDTO);
     }
 
     /**

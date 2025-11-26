@@ -2,7 +2,7 @@
 
 namespace App\Services\Users;
 
-use App\DTO\UserDTO;
+use App\DTO\Users\UserDTO;
 use App\Models\Users\User;
 use App\Repositories\Users\UserRepositoryInterface;
 use Illuminate\Database\Eloquent\Collection;

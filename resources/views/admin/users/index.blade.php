@@ -2,7 +2,7 @@
     use App\enums\ActiveEnum;
 @endphp
 @extends('admin.layouts.master')
-@section('toolbar-title', 'Users')
+@section('toolbar-title', 'Kullanıcı Listesi')
 @section('content')
     <!--begin::Products-->
     <div class="card card-flush">

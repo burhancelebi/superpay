@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Enums\ActiveEnum;
+use App\Enums\Users\UserRoleEnum;
 use App\Models\Users\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -26,6 +27,7 @@ class UserSeeder extends Seeder
             'email' => 'emrecan@gmail.com',
             'password' => Hash::make('emre21'),
             'active' => ActiveEnum::ACTIVE,
+            'role' => UserRoleEnum::ADMIN,
         ]);
 
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');

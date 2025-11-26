@@ -44,7 +44,7 @@
                                     <div class="twm-jobs-amount">$500 <span>/ hour</span></div>
                                     <div class="twm-job-st5-top">
                                         <div class="twm-media">
-                                            <img src="https://thewebmax.org/jobzilla/images/home-5/jobs-company/pic1.jpg" alt="#">
+                                            <img src="{{ asset('assets/images/task-image.png') }}" alt="#">
                                         </div>
                                         <div class="twm-com-info">
                                             <p class="twm-job-address">New York, US</p>

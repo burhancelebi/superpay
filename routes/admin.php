@@ -4,11 +4,14 @@ use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\BackofficeController;
 use App\Http\Controllers\Admin\Customers\CustomerController;
 use App\Http\Controllers\Admin\Settings\SettingController;
+use App\Http\Controllers\Admin\Tasks\TaskController;
 use App\Http\Controllers\Admin\Transactions\TransactionController;
 use App\Http\Controllers\Admin\Users\UserController;
+use App\Http\Controllers\Admin\Wallets\WalletController;
+use App\Http\Middleware\AdminMiddleware;
 use Illuminate\Support\Facades\Route;
 
-Route::middleware(['web', 'auth'])->group(function () {
+Route::middleware(['web', 'auth', AdminMiddleware::class])->group(function () {
 
     Route::get('/', [BackofficeController::class, 'index'])->name('backoffice');
     Route::get('/maintenance/{status}', [BackofficeController::class, 'maintenance'])->name('maintenance');
@@ -41,11 +44,26 @@ Route::middleware(['web', 'auth'])->group(function () {
         Route::get('update-status/{userId}', [UserController::class, 'updateStatus'])
             ->name('users.updateStatus');
     });
+
+    Route::resource('wallets', WalletController::class);
+    Route::prefix('wallets')->group(function () {
+        Route::get('/active/{id}/{active}', [WalletController::class, 'active'])
+            ->name('wallets.active');
+    });
+
+    Route::resource('tasks', TaskController::class);
+    Route::prefix('tasks')->group(function () {
+        Route::get('/active/{id}/{active}', [TaskController::class, 'active'])
+            ->name('tasks.active');
+    });
+
 });
 
 Route::middleware('web')->group(function () {
     Route::group(['prefix' => 'auth'], function () {
-        Route::get('login', [AuthController::class, 'showLoginForm'])->name('login.form');
+        Route::get('login', [AuthController::class, 'showLoginForm'])
+            ->name('login.form')
+            ->middleware('guest');
         Route::post('login', [AuthController::class, 'login'])->name('login');
     })->middleware(['guest']);
 
