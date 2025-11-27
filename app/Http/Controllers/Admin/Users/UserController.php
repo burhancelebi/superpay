@@ -33,7 +33,6 @@ class UserController extends Controller
     public function show(string $id): Factory|Application|View
     {
         $user = $this->userService->findById($id);
-        Gate::authorize('view', $user);
 
         return view('admin.users.detail', compact('user'));
     }

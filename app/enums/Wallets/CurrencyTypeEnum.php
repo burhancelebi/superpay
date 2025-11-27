@@ -4,6 +4,9 @@ namespace App\enums\Wallets;
 
 enum CurrencyTypeEnum: string
 {
+    case TRY = 'TRY';
+    case USD = 'USD';
+    case EUR = 'EUR';
     case USDT = 'USDT';
     case BTC = 'BTC';
     case ETH = 'ETH';
@@ -12,6 +15,9 @@ enum CurrencyTypeEnum: string
     public function label(): string
     {
         return match ($this) {
+            self::TRY => 'Türk Lirası (TRY)',
+            self::USD => 'Amerikan Doları (USD)',
+            self::EUR => 'Euro (EUR)',
             self::USDT => 'Tether (USDT)',
             self::BTC => 'Bitcoin (BTC)',
             self::ETH => 'Ethereum (ETH)',

@@ -1,3 +1,4 @@
+@php use App\enums\Wallets\CurrencyTypeEnum; @endphp
 @extends('admin.layouts.master')
 @section('toolbar-title', 'Görevi Düzenle')
 @section('content')
@@ -35,6 +36,21 @@
                     </div>
                 </div>
                 <!--end::Input group-->
+
+                <div class="row mb-6">
+                    <label class="col-lg-4 col-form-label required fw-semibold fs-6">Para Birimi (Currency)</label>
+                    <div class="col-lg-8 fv-row">
+                        <select name="currency" class="form-select form-select-solid form-select-lg fw-semibold"
+                                data-control="select2" data-placeholder="Bir para birimi seçin">
+                            <option value="">Para Birimi Seçiniz...</option>
+                            @foreach(CurrencyTypeEnum::cases() as $currency)
+                                <option
+                                    value="{{ $currency->value }}" {{ old('currency', $currency->value) == $task->currency ? 'selected' : '' }}>{{ $currency->label() }}
+                                </option>
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
 
                 <!--begin::Input group-->
                 <div class="row mb-6">

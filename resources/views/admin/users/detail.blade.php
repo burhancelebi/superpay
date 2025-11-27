@@ -1,4 +1,3 @@
-@php use Permissions\Permissions; @endphp
 @extends('admin.layouts.master')
 @section('toolbar-title', $user->fullName)
 @section('content')
@@ -22,7 +21,7 @@
                             <div class="d-flex flex-center flex-column py-5">
                                 <!--begin::Avatar-->
                                 <div class="symbol symbol-100px symbol-circle mb-7">
-                                    <img src="{{ asset('assets/media/blank-profile.webp') }}" alt="image" />
+                                    <img src="{{ asset('assets/admin/media/lacivert-anka-kusu.png') }}" alt="image" />
                                 </div>
                                 <!--end::Avatar-->
 
@@ -33,11 +32,11 @@
                                 <!--end::Name-->
 
                                 <!--begin::Position-->
-                                <div class="mb-9">
+                                {{--<div class="mb-9">
                                     <!--begin::Badge-->
                                     <div class="badge badge-lg badge-light-primary d-inline">Administrator</div>
                                     <!--begin::Badge-->
-                                </div>
+                                </div>--}}
                                 <!--end::Position-->
                             </div>
                             <!--end::User Info-->
@@ -47,7 +46,7 @@
                             <div id="kt_user_view_details" class="collapse show">
                                 <div class="pb-5 fs-6">
                                     <!--begin::Details item-->
-                                    <div class="fw-bold mt-5">Account ID</div>
+                                    <div class="fw-bold mt-5">ID</div>
                                     <div class="text-gray-600">ID-{{ $user->id }}</div>
                                     <!--begin::Details item-->
                                     <!--begin::Details item-->
@@ -56,12 +55,6 @@
                                         <a href="#" class="text-gray-600 text-hover-primary">
                                             {{ $user->email }}
                                         </a>
-                                    </div>
-                                    <!--begin::Details item-->
-                                    <!--begin::Details item-->
-                                    <div class="fw-bold mt-5">Address</div>
-                                    <div class="text-gray-600">
-                                        {{ $user->company->address }}
                                     </div>
                                     <!--begin::Details item-->
                                 </div>
@@ -76,37 +69,6 @@
 
                 <!--begin::Content-->
                 <div class="flex-lg-row-fluid ms-lg-15">
-                    <!--begin:::Tabs-->
-                    <ul class="nav nav-custom nav-tabs nav-line-tabs nav-line-tabs-2x border-0 fs-4 fw-semibold mb-8">
-                        @if($user->hasDirectPermission(Permissions::view(Permissions::PERMISSIONS)))
-                            <!--begin:::Tab item-->
-                            <li class="nav-item ms-auto">
-                                <!--begin::Action menu-->
-                                <a href="#" class="btn btn-primary ps-7" data-kt-menu-trigger="click" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
-                                    Actions
-                                    <i class="fa-solid fa-caret-down fs-2 me-0"></i>
-                                </a>
-                                <!--begin::Menu-->
-                                <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-semibold py-4 w-250px fs-6" data-kt-menu="true">
-                                    <!--begin::Menu item-->
-                                    <div class="menu-item px-5">
-                                        <a href="{{ route('admin.users.permissions', $user->id) }}" class="menu-link px-5">
-                                            Permissions
-                                        </a>
-                                    </div>
-                                    <!--end::Menu item-->
-
-                                    <!--begin::Menu separator-->
-                                    <div class="separator my-3"></div>
-                                    <!--end::Menu separator-->
-                                </div>
-                                <!--end::Menu-->
-                                <!--end::Menu-->
-                            </li>
-                            <!--end:::Tab item-->
-                        @endif
-                    </ul>
-                    <!--end:::Tabs-->
 
                     <!--begin:::Tab content-->
                     <div>
@@ -132,12 +94,20 @@
                                         <table class="table align-middle table-row-dashed gy-5" id="kt_table_users_login_session">
                                             <tbody class="fs-6 fw-semibold text-gray-600">
                                             <tr>
-                                                <td>Company</td>
-                                                <td>{{ $user->company->name }}</td>
+                                                <td>Email</td>
+                                                <td>{{ $user->email }}</td>
                                             </tr>
                                             <tr>
-                                                <td>Api-Key</td>
-                                                <td>{{ $user->company->api_key }}</td>
+                                                <td>Telefon</td>
+                                                <td>{{ $user->phone }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Meslek</td>
+                                                <td>{{ $user->profession }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Yaş</td>
+                                                <td>{{ $user->age }}</td>
                                             </tr>
                                             </tbody>
                                         </table>

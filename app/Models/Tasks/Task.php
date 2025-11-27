@@ -14,6 +14,7 @@ class Task extends Model
     protected $fillable = [
         'title',
         'duration',
+        'currency',
         'amount',
         'reward',
         'active',
@@ -36,5 +37,13 @@ class Task extends Model
     public function wallet(): BelongsTo
     {
         return $this->belongsTo(Wallet::class);
+    }
+
+    /**
+     * @return bool
+     */
+    public function scopeIsInvestment(): bool
+    {
+        return $this->type == TaskTypeEnum::INVESTMENT;
     }
 }

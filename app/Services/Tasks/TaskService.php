@@ -6,6 +6,7 @@ use App\DTO\Tasks\TaskDTO;
 use App\Models\Tasks\Task;
 use App\Repositories\Tasks\TaskRepositoryInterface;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
+use Illuminate\Database\Eloquent\Collection;
 
 class TaskService implements TaskServiceInterface
 {
@@ -14,6 +15,14 @@ class TaskService implements TaskServiceInterface
     public function __construct(TaskRepositoryInterface $taskRepository)
     {
         $this->taskRepository = $taskRepository;
+    }
+
+    /**
+     * @return LengthAwarePaginator
+     */
+    public function getActiveTasks(): LengthAwarePaginator
+    {
+        return $this->taskRepository->getActiveTasks();
     }
 
     /**

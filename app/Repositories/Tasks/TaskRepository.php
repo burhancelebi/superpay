@@ -3,8 +3,10 @@
 namespace App\Repositories\Tasks;
 
 use App\DTO\Tasks\TaskDTO;
+use App\enums\Tasks\TaskStatusEnum;
 use App\Models\Tasks\Task;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
+use Illuminate\Database\Eloquent\Collection;
 
 class TaskRepository implements TaskRepositoryInterface
 {
@@ -15,6 +17,19 @@ class TaskRepository implements TaskRepositoryInterface
         $this->task = $task;
     }
 
+    /**
+     * @return LengthAwarePaginator
+     */
+    public function getActiveTasks(): LengthAwarePaginator
+    {
+        return $this->task->newQuery()
+            ->where('status', TaskStatusEnum::OPEN)
+            ->paginate(20);
+    }
+
+    /**
+     * @return LengthAwarePaginator
+     */
     public function getAllPaginated(): LengthAwarePaginator
     {
         return $this->task->newQuery()
@@ -40,6 +55,7 @@ class TaskRepository implements TaskRepositoryInterface
     {
         $task = $this->findById($id);
         $task->update($data);
+
         return $task;
     }
 

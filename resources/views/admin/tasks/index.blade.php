@@ -30,6 +30,7 @@
                         <tr class="text-start text-muted fw-bold fs-7 text-uppercase gs-0">
                             <th class="min-w-125px">Başlık</th>
                             <th class="min-w-125px">Tür</th>
+                            <th class="min-w-125px">P. Birimi</th>
                             <th class="min-w-125px">Tutar</th>
                             <th class="min-w-125px">Ödül</th>
                             <th class="min-w-125px">Puan</th>
@@ -46,6 +47,7 @@
                                 <td>
                                     <div class="badge badge-light-info fw-bold">{{ $task->type->label() }}</div>
                                 </td>
+                                <td class="fw-bolder text-black">{{ $task->currency }}</td>
                                 <td>{{ $task->amount }}</td>
                                 <td>{{ $task->reward }}</td>
                                 <td>{{ $task->score }}</td>

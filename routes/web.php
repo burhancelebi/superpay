@@ -2,9 +2,15 @@
 
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\AuthController;
+use App\Http\Controllers\Frontend\TaskController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+
+Route::prefix('tasks')->as('tasks.')->group(function () {
+    Route::get('/', [TaskController::class, 'index'])->name('index');
+    Route::get('/{id}', [TaskController::class, 'show'])->name('detail');
+});
 
 Route::group(['prefix' => 'auth'], function () {
     Route::get('/login', [AuthController::class, 'showLoginForm'])->name('auth.login-page')

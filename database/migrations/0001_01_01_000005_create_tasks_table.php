@@ -14,6 +14,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('duration')->nullable();
+            $table->string('currency')->nullable();
             $table->decimal('amount', 10)->nullable();
             $table->decimal('reward', 10)->nullable();
             $table->boolean('active')->default(ActiveEnum::ACTIVE);

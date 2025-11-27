@@ -14,6 +14,7 @@ class TaskDTO extends Data
     public function __construct(
         public ?string $title = null,
         public ?string $duration = null,
+        public ?string $currency = null,
         public ?float $amount = 0.0,
         public ?float $reward = 0.0,
         public ?int $active = null,
