@@ -13,7 +13,7 @@ use Illuminate\Http\UploadedFile;
 
 class SettingService implements SettingServiceInterface
 {
-    const SETTING_IMAGE_PATH = 'assets/media/logos/';
+    const SETTING_IMAGE_PATH = 'assets/admin/media/logos/';
     private SettingRepositoryInterface $settingRepository;
 
     public function __construct(SettingRepositoryInterface $settingRepository)

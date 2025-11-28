@@ -55,6 +55,17 @@ class AuthController extends Controller
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials, $request->boolean('remember'))) {
+
+            if (!Auth::user()->isActive()) {
+
+                Auth::logout();
+                request()->session()->invalidate();
+
+                return back()->withErrors([
+                    'email' => 'Hesabınız sistemde aktif olmadığından dolayı giriş yapamazsınız.',
+                ])->onlyInput('email');
+            }
+
             $request->session()->regenerate();
 
             return redirect()->intended(route('home'));
@@ -111,6 +122,6 @@ class AuthController extends Controller
         request()->session()->invalidate();
         request()->session()->regenerateToken();
 
-        return redirect()->route('login');
+        return redirect()->route('auth.login');
     }
 }

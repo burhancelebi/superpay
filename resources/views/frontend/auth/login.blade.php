@@ -9,7 +9,7 @@
                     <div class="col-xl-8 col-lg-6 col-md-5 twm-log-reg-media-wrap order-2 order-md-1">
                         <div class="twm-log-reg-media">
                             <div class="twm-l-media">
-                                <img src="https://thewebmax.org/jobzilla/images/login-bg.png" alt="">
+                                <img src="{{ asset('assets/images/login-bg.png') }}" alt="">
                             </div>
                         </div>
                     </div>

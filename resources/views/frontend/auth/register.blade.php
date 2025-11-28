@@ -9,7 +9,7 @@
                     <div class="col-xl-6 col-lg-6 col-md-5 twm-log-reg-media-wrap order-2 order-md-1">
                         <div class="twm-log-reg-media">
                             <div class="twm-l-media">
-                                <img src="https://thewebmax.org/jobzilla/images/login-bg.png" alt="">
+                                <img src="{{ asset('assets/images/login-bg.png') }}" alt="">
                             </div>
                         </div>
                     </div>
@@ -89,8 +89,7 @@
                                             <div class="form-group mb-3">
                                                 <input name="profession" type="text" required="" class="form-control"
                                                        value="{{ old('profession') }}" placeholder="Meslek*">
-                                                <small class="text-danger error-message"
-                                                       data-field="profession"></small>
+                                                <small class="text-danger error-message" data-field="profession"></small>
                                             </div>
                                         </div>
 
@@ -131,8 +130,7 @@
                                                         <input type="checkbox" class="form-check-input" id="Password4">
                                                         <label class="form-check-label rem-forgot" for="Password4">Beni
                                                             hatırla
-                                                            <a href="javascript:;" class="site-text-primary">Şifremi
-                                                                unuttum</a>
+                                                            {{--<a href="javascript:;" class="site-text-primary">Şifremi unuttum</a>--}}
                                                         </label>
                                                     </div>
                                                 </div>
@@ -144,39 +142,6 @@
                                                 <button type="submit" class="site-button">Kaydol</button>
                                             </div>
                                         </div>
-
-                                        <script>
-                                            document.getElementById('registerForm').addEventListener('submit', function (e) {
-                                                e.preventDefault();
-
-                                                document.querySelectorAll('.error-message').forEach(el => el.textContent = '');
-                                                const formData = new FormData(this);
-
-                                                fetch(this.action, {
-                                                    method: 'POST',
-                                                    body: formData,
-                                                    headers: {
-                                                        'Accept': 'application/json',
-                                                    }
-                                                })
-                                                    .then(response => response.json())
-                                                    .then(data => {
-                                                        if (data.success) {
-                                                            window.location.href = '/'; // Anasayfaya yönlendir
-                                                        } else if (data.errors) {
-                                                            Object.keys(data.errors).forEach(field => {
-                                                                const errorElement = document.querySelector(`[data-field="${field}"]`);
-                                                                if (errorElement) {
-                                                                    errorElement.textContent = data.errors[field][0];
-                                                                }
-                                                            });
-                                                        }
-                                                    })
-                                                    .catch(error => {
-                                                        console.error('Error:', error);
-                                                    });
-                                            });
-                                        </script>
                                     </form>
 
                                     <div class="col-md-12 text-center">
@@ -203,6 +168,39 @@
 @endsection
 @section('js')
     <script>
+
+        document.getElementById('registerForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            document.querySelectorAll('.error-message').forEach(el => el.textContent = '');
+            const formData = new FormData(this);
+
+            fetch(this.action, {
+                method: 'POST',
+                body: formData,
+                headers: {'Accept': 'application/json'}
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'success') {
+                        alert(data.message)
+                        window.location.href = '/';
+                    } else if (data.status === 'error') {
+                        alert(data.message)
+                    } else if (data.errors) {
+                        Object.keys(data.errors).forEach(field => {
+                            const errorElement = document.querySelector(`[data-field="${field}"]`);
+                            if (errorElement) {
+                                errorElement.textContent = data.errors[field][0];
+                            }
+                        });
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        });
+
         document.addEventListener('DOMContentLoaded', function () {
             const container = document.getElementById('bank-accounts-container');
 

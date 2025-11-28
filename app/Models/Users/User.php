@@ -67,6 +67,6 @@ class User extends Authenticatable
      */
     public function isActive(): bool
     {
-        return $this->active->value == ActiveEnum::ACTIVE->value;
+        return $this->active?->value == ActiveEnum::ACTIVE->value;
     }
 }

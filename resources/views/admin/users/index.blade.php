@@ -32,8 +32,10 @@
                     <th class="min-w-100px">ID</th>
                     <th class="min-w-175px">İsim & Soyisim</th>
                     <th class="min-w-175px">Email</th>
-                    <th class="text-end min-w-70px">Active/Passive</th>
-                    <th class="text-end min-w-100px">Action</th>
+                    <th class="min-w-175px">Meslek</th>
+                    <th class="min-w-175px">Yaş</th>
+                    <th class="text-end min-w-70px">Aktif / Pasif</th>
+                    <th class="text-end min-w-100px">İşlemler</th>
                 </tr>
                 </thead>
                 <tbody class="fw-semibold text-gray-600">
@@ -55,17 +57,27 @@
                                 {{ $user->email }}
                             </a>
                         </td>
+                        <td class="text-start" data-dt-column="1">
+                            <a href="javascript:void(0)" class="text-gray-800 text-hover-primary fw-bold">
+                                {{ $user->profession }}
+                            </a>
+                        </td>
+                        <td class="text-start" data-dt-column="1">
+                            <a href="javascript:void(0)" class="text-gray-800 text-hover-primary fw-bold">
+                                {{ $user->age }}
+                            </a>
+                        </td>
                         <td class="text-end pe-0" data-dt-column="2">
                             <!--begin::Badges-->
-                            <div class="badge badge-light-{{ $user->active->value ? 'success' : 'danger' }}">
-                                {{ $user->active->label() }}
+                            <div class="badge badge-light-{{ $user->active?->value ? 'success' : 'danger' }}">
+                                {{ $user->active?->label() }}
                             </div>
                             <!--end::Badges-->
                         </td>
                         <td class="text-end" data-dt-column="3">
                             <a href="#" class="btn btn-sm btn-light btn-flex btn-center btn-active-light-primary"
                                data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
-                                Actions
+                                İşlemler
                                 <i class="fa-solid fa-caret-down fs-5 ms-1"></i>
                             </a>
                             <!--begin::Menu-->
@@ -75,15 +87,15 @@
 
                                 <div class="menu-item px-3">
                                     <a href="{{ route('admin.users.show', $user->id) }}" class="menu-link px-3">
-                                        Detail
+                                        Detay
                                     </a>
                                 </div>
                                     <div class="menu-item px-3">
                                         <a href="{{ route('admin.users.updateStatus', [
     'userId' => $user->id,
-    'active' => $user->active->value ? ActiveEnum::PASSIVE->value : ActiveEnum::ACTIVE->value
+    'active' => $user->active?->value ? ActiveEnum::PASSIVE->value : ActiveEnum::ACTIVE->value
 ]) }}" class="menu-link px-3" data-kt-ecommerce-order-filter="delete_row">
-                                            {{ $user->active->toggle()->label() }}
+                                            {{ $user->active?->toggle()->label() }}
                                         </a>
                                     </div>
                             </div>

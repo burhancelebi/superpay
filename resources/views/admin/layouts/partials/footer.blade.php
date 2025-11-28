@@ -22,7 +22,7 @@
 <script src="{{ asset('assets/admin/js/custom/utilities/modals/users-search.js') }}"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/tr.js"></script>
-<script src="{{ asset('assets/js/custom.js') }}"></script>
+<script src="{{ asset('assets/admin/js/custom.js') }}"></script>
 <script>
     $(document).ready(function() {
         $.ajaxSetup({

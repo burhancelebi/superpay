@@ -8,7 +8,9 @@
                         <div class="col-lg-7 col-md-12">
                             <div class="twm-bnr-left-section">
                                 <div class="twm-bnr-title-large">Kazanç Dünyasına Adım Atmak İster Misin ?</div>
-                                <a href="{{ route('auth.login-page') }}" class="btn btn-outline-primary">Giriş Yap</a>
+                                @guest
+                                    <a href="{{ route('auth.login-page') }}" class="btn btn-outline-primary">Giriş Yap</a>
+                                @endguest
                                 <a href="{{ route('tasks.index') }}" class="btn btn-outline-primary">Günün Görevleri</a>
                             </div>
                         </div>

@@ -9,11 +9,11 @@
 
                     <div class="widget widget_about">
                         <div class="logo-footer clearfix">
-                            <a href="index.html"><img src="{{ asset(getSettingByKey('logo-image')?->value) }}" alt=""></a>
+                            <a href="{{ route('home') }}"><img src="{{ asset(getSettingByKey('logo-image')?->value) }}" alt=""></a>
                         </div>
                         <p>Many desktop publishing packages and web page editors now.</p>
                         <ul class="ftr-list">
-                            <li><p><span>Address :</span>65 Sunset CA 90026, USA </p></li>
+                            <li><p><span>Adres :</span>Istanbul </p></li>
                             <li><p><span>Email :</span>example@max.com</p></li>
                             <li><p><span>Call :</span>555-555-1234</p></li>
                         </ul>
@@ -23,8 +23,7 @@
 
                 <div class="col-lg-9 col-md-12">
                     <div class="row">
-
-                        <div class="col-lg-3 col-md-6 col-sm-6">
+                        {{--<div class="col-lg-3 col-md-6 col-sm-6">
                             <div class="widget widget_services ftr-list-center">
                                 <h3 class="widget-title">For Candidate</h3>
                                 <ul>
@@ -36,7 +35,6 @@
                                 </ul>
                             </div>
                         </div>
-
                         <div class="col-lg-3 col-md-6 col-sm-6">
                             <div class="widget widget_services ftr-list-center">
                                 <h3 class="widget-title">For Employers</h3>
@@ -49,7 +47,6 @@
                                 </ul>
                             </div>
                         </div>
-
                         <div class="col-lg-3 col-md-6 col-sm-6">
                             <div class="widget widget_services ftr-list-center">
                                 <h3 class="widget-title">Helpful Resources</h3>
@@ -62,7 +59,6 @@
                                 </ul>
                             </div>
                         </div>
-
                         <div class="col-lg-3 col-md-6 col-sm-6">
                             <div class="widget widget_services ftr-list-center">
                                 <h3 class="widget-title">Quick Links</h3>
@@ -74,21 +70,17 @@
                                     <li><a href="employer-list.html">Employer</a></li>
                                 </ul>
                             </div>
-                        </div>
-
+                        </div>--}}
                     </div>
-
                 </div>
 
             </div>
         </div>
         <!-- FOOTER COPYRIGHT -->
         <div class="footer-bottom">
-
             <div class="footer-bottom-info">
-
                 <div class="footer-copy-right">
-                    <span class="copyrights-text">Copyright © 2023 by thewebmax All Rights Reserved.</span>
+                    <span class="copyrights-text">Copyright © 2023 by SuperPay All Rights Reserved.</span>
                 </div>
                 <ul class="social-icons">
                     <li><a href="javascript:void(0);" class="fab fa-facebook-f"></a></li>
@@ -109,286 +101,31 @@
 <!-- BUTTON TOP START -->
 <button class="scroltop"><span class="fa fa-angle-up  relative" id="btn-vibrate"></span></button>
 
-<!--Model Popup Section Start-->
-<!--Signup popup -->
-<div class="modal fade twm-sign-up" id="sign_up_popup" aria-hidden="true" aria-labelledby="sign_up_popupLabel" tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <form>
-
-                <div class="modal-header">
-                    <h2 class="modal-title" id="sign_up_popupLabel">Sign Up</h2>
-                    <p>Sign Up and get access to all the features of Jobzilla</p>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-
-                <div class="modal-body">
-                    <div class="twm-tabs-style-2">
-                        <ul class="nav nav-tabs" id="myTab" role="tablist">
-
-                            <!--Signup Candidate-->
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#sign-candidate" type="button"><i class="fas fa-user-tie"></i>Candidate</button>
-                            </li>
-                            <!--Signup Employer-->
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#sign-Employer" type="button"><i class="fas fa-building"></i>Employer</button>
-                            </li>
-
-                        </ul>
-                        <div class="tab-content" id="myTabContent">
-                            <!--Signup Candidate Content-->
-                            <div class="tab-pane fade show active" id="sign-candidate">
-                                <div class="row">
-
-                                    <div class="col-lg-12">
-                                        <div class="form-group mb-3">
-                                            <input name="username" type="text" required="" class="form-control" placeholder="Usearname*">
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-12">
-                                        <div class="form-group mb-3">
-                                            <input name="email" type="text" class="form-control" required="" placeholder="Password*">
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-12">
-                                        <div class="form-group mb-3">
-                                            <input name="phone" type="text" class="form-control" required="" placeholder="Email*">
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-12">
-                                        <div class="form-group mb-3">
-                                            <input name="phone" type="text" class="form-control" required="" placeholder="Phone*">
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-12">
-                                        <div class="form-group mb-3">
-                                            <div class=" form-check">
-                                                <input type="checkbox" class="form-check-input" id="agree1">
-                                                <label class="form-check-label" for="agree1">I agree to the <a href="javascript:;">Terms and conditions</a></label>
-                                                <p>Already registered?
-                                                    <button class="twm-backto-login" data-bs-target="#sign_up_popup2" data-bs-toggle="modal" data-bs-dismiss="modal">Log in here</button>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <button type="submit" class="site-button">Sign Up</button>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <!--Signup Employer Content-->
-                            <div class="tab-pane fade" id="sign-Employer">
-                                <div class="row">
-
-                                    <div class="col-lg-12">
-                                        <div class="form-group mb-3">
-                                            <input name="username" type="text" required="" class="form-control" placeholder="Usearname*">
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-12">
-                                        <div class="form-group mb-3">
-                                            <input name="email" type="text" class="form-control" required="" placeholder="Password*">
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-12">
-                                        <div class="form-group mb-3">
-                                            <input name="phone" type="text" class="form-control" required="" placeholder="Email*">
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-12">
-                                        <div class="form-group mb-3">
-                                            <input name="phone" type="text" class="form-control" required="" placeholder="Phone*">
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-12">
-                                        <div class="form-group mb-3">
-                                            <div class=" form-check">
-                                                <input type="checkbox" class="form-check-input" id="agree2">
-                                                <label class="form-check-label" for="agree2">I agree to the <a href="javascript:;">Terms and conditions</a></label>
-                                                <p>Already registered?
-                                                    <button class="twm-backto-login" data-bs-target="#sign_up_popup2" data-bs-toggle="modal" data-bs-dismiss="modal">Log in here</button>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <button type="submit" class="site-button">Sign Up</button>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="modal-footer">
-                    <span class="modal-f-title">Login or Sign up with</span>
-                    <ul class="twm-modal-social">
-                        <li><a href="https://thewebmax.org/jobzilla/javascript" class="facebook-clr"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="https://thewebmax.org/jobzilla/javascript" class="twitter-clr"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="https://thewebmax.org/jobzilla/javascript" class="linkedin-clr"><i class="fab fa-linkedin-in"></i></a></li>
-                        <li><a href="https://thewebmax.org/jobzilla/javascript" class="google-clr"><i class="fab fa-google"></i></a></li>
-                    </ul>
-                </div>
-
-            </form>
-        </div>
-    </div>
-
-</div>
-<!--Login popup -->
-<div class="modal fade twm-sign-up" id="sign_up_popup2" aria-hidden="true" aria-labelledby="sign_up_popupLabel2" tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-
-            <form>
-                <div class="modal-header">
-                    <h2 class="modal-title" id="sign_up_popupLabel2">Login</h2>
-                    <p>Login and get access to all the features of Jobzilla</p>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="twm-tabs-style-2">
-                        <ul class="nav nav-tabs" id="myTab2" role="tablist">
-
-                            <!--Login Candidate-->
-                            <li class="nav-item">
-                                <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#login-candidate" type="button"><i class="fas fa-user-tie"></i>Candidate</button>
-                            </li>
-                            <!--Login Employer-->
-                            <li class="nav-item">
-                                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#login-Employer" type="button"><i class="fas fa-building"></i>Employer</button>
-                            </li>
-
-                        </ul>
-
-                        <div class="tab-content" id="myTab2Content">
-                            <!--Login Candidate Content-->
-                            <div class="tab-pane fade show active" id="login-candidate">
-                                <div class="row">
-
-                                    <div class="col-lg-12">
-                                        <div class="form-group mb-3">
-                                            <input name="username" type="text" required="" class="form-control" placeholder="Usearname*">
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-12">
-                                        <div class="form-group mb-3">
-                                            <input name="email" type="text" class="form-control" required="" placeholder="Password*">
-                                        </div>
-                                    </div>
-
-
-                                    <div class="col-lg-12">
-                                        <div class="form-group mb-3">
-                                            <div class=" form-check">
-                                                <input type="checkbox" class="form-check-input" id="Password3">
-                                                <label class="form-check-label rem-forgot" for="Password3">Remember me <a href="javascript:;">Forgot Password</a></label>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <button type="submit" class="site-button">Log in</button>
-                                        <div class="mt-3 mb-3">Don't have an account ?
-                                            <button class="twm-backto-login" data-bs-target="#sign_up_popup" data-bs-toggle="modal" data-bs-dismiss="modal">Sign Up</button>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <!--Login Employer Content-->
-                            <div class="tab-pane fade" id="login-Employer">
-                                <div class="row">
-
-                                    <div class="col-lg-12">
-                                        <div class="form-group mb-3">
-                                            <input name="username" type="text" required="" class="form-control" placeholder="Usearname*">
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-12">
-                                        <div class="form-group mb-3">
-                                            <input name="email" type="text" class="form-control" required="" placeholder="Password*">
-                                        </div>
-                                    </div>
-
-
-                                    <div class="col-lg-12">
-                                        <div class="form-group mb-3">
-                                            <div class=" form-check">
-                                                <input type="checkbox" class="form-check-input" id="Password4">
-                                                <label class="form-check-label rem-forgot" for="Password4">Remember me <a href="javascript:;">Forgot Password</a></label>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-12">
-                                        <button type="submit" class="site-button">Log in</button>
-                                        <div class="mt-3 mb-3">Don't have an account ?
-                                            <button class="twm-backto-login" data-bs-target="#sign_up_popup" data-bs-toggle="modal" data-bs-dismiss="modal">Sign Up</button>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <span class="modal-f-title">Login or Sign up with</span>
-                    <ul class="twm-modal-social">
-                        <li><a href="https://thewebmax.org/jobzilla/javascript" class="facebook-clr"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="https://thewebmax.org/jobzilla/javascript" class="twitter-clr"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="https://thewebmax.org/jobzilla/javascript" class="linkedin-clr"><i class="fab fa-linkedin-in"></i></a></li>
-                        <li><a href="https://thewebmax.org/jobzilla/javascript" class="google-clr"><i class="fab fa-google"></i></a></li>
-                    </ul>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-<!--Model Popup Section End-->
-</div>
-
 <!-- JAVASCRIPT  FILES ========================================= -->
-<script  src="https://thewebmax.org/jobzilla/js/jquery-3.6.0.min.js"></script>
-<script  src="https://thewebmax.org/jobzilla/js/popper.min.js"></script>
-<script  src="https://thewebmax.org/jobzilla/js/bootstrap.min.js"></script>
-<script  src="https://thewebmax.org/jobzilla/js/magnific-popup.min.js"></script>
-<script  src="https://thewebmax.org/jobzilla/js/waypoints.min.js"></script>
-<script  src="https://thewebmax.org/jobzilla/js/counterup.min.js"></script>
-<script  src="https://thewebmax.org/jobzilla/js/waypoints-sticky.min.js"></script>
-<script  src="https://thewebmax.org/jobzilla/js/isotope.pkgd.min.js"></script>
-<script  src="https://thewebmax.org/jobzilla/js/imagesloaded.pkgd.min.js"></script>
-<script  src="https://thewebmax.org/jobzilla/js/owl.carousel.min.js"></script>
-<script  src="https://thewebmax.org/jobzilla/js/jquery.owl-filter.js"></script>
-<script  src="https://thewebmax.org/jobzilla/js/theia-sticky-sidebar.js"></script>
-<script  src="https://thewebmax.org/jobzilla/js/lc_lightbox.lite.js" ></script>
-<script  src="https://thewebmax.org/jobzilla/js/bootstrap-select.min.js"></script>
-<script  src="https://thewebmax.org/jobzilla/js/dropzone.js"></script>
-<script  src="https://thewebmax.org/jobzilla/js/jquery.scrollbar.js"></script><!-- scroller -->
-<script  src="https://thewebmax.org/jobzilla/js/bootstrap-datepicker.js"></script><!-- scroller -->
-<script  src="https://thewebmax.org/jobzilla/js/jquery.dataTables.min.js"></script><!-- Datatable -->
-<script  src="https://thewebmax.org/jobzilla/js/dataTables.bootstrap5.min.js"></script><!-- Datatable -->
-<script  src="https://thewebmax.org/jobzilla/js/chart.js"></script><!-- Chart -->
-<script  src="https://thewebmax.org/jobzilla/js/bootstrap-slider.min.js"></script><!-- Price range slider -->
-<script  src="https://thewebmax.org/jobzilla/js/swiper-bundle.min.js"></script><!-- Swiper JS -->
-<script  src="https://thewebmax.org/jobzilla/js/custom.js"></script><!-- CUSTOM FUCTIONS  -->
-<script  src="https://thewebmax.org/jobzilla/js/switcher.js"></script><!-- SHORTCODE FUCTIONS  -->
+<script  src="{{ asset('assets/js/jquery-3.6.0.min.js') }}"></script>
+<script  src="{{ asset('assets/js/popper.min.js') }}"></script>
+<script  src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('assets/js/magnific-popup.min.js') }}"></script>
+<script src="{{ asset('assets/js/waypoints.min.js') }}"></script>
+<script src="{{ asset('assets/js/counterup.min.js') }}"></script>
+<script src="{{ asset('assets/js/waypoints-sticky.min.js') }}"></script>
+<script src="{{ asset('assets/js/isotope.pkgd.min.js') }}"></script>
+<script src="{{ asset('assets/js/imagesloaded.pkgd.min.js') }}"></script>
+<script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script>
+<script src="{{ asset('assets/js/jquery.owl-filter.js') }}"></script>
+<script src="{{ asset('assets/js/theia-sticky-sidebar.js') }}"></script>
+<script src="{{ asset('assets/js/lc_lightbox.lite.js') }}"></script>
+<script src="{{ asset('assets/js/bootstrap-select.min.js') }}"></script>
+<script src="{{ asset('assets/js/dropzone.js') }}"></script>
+<script src="{{ asset('assets/js/jquery.scrollbar.js') }}"></script>
+<script src="{{ asset('assets/js/bootstrap-datepicker.js') }}"></script>
+<script src="{{ asset('assets/js/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('assets/js/dataTables.bootstrap5.min.js') }}"></script>
+<script src="{{ asset('assets/js/chart.js') }}"></script>
+<script src="{{ asset('assets/js/bootstrap-slider.min.js') }}"></script>
+<script src="{{ asset('assets/js/swiper-bundle.min.js') }}"></script>
+<script src="{{ asset('assets/js/custom.js') }}"></script>
+<script src="{{ asset('assets/js/switcher.js') }}"></script>
 @yield('js')
 <script>
     $(document).ready(function() {

@@ -7,7 +7,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
 
     <!-- PAGE TITLE HERE -->
-    <title>Jobzilla Template | Home Page Style 8</title>
+    <title>{{ getSettingByKey('site-title')?->value }}</title>
 
     <!-- MOBILE SPECIFIC -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,15 +23,8 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/dropzone.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/scrollbar.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/datepicker.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/flaticon.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/swiper-bundle.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}">
-
-
-    <!-- THEME COLOR CHANGE STYLE SHEET -->
-    <link rel="stylesheet" class="skin" type="text/css" href="css/skins-type/skin-6.css">
-    <!-- SIDE SWITCHER STYLE SHEET -->
-    <link rel="stylesheet" type="text/css" href="css/switcher.css">
 
 </head>
 
@@ -67,6 +60,11 @@
                     <div class="nav-animation header-nav navbar-collapse collapse d-flex justify-content-center">
                         <ul class="nav navbar-nav">
                             <li class="has-mega-menu"><a href="{{ route('home') }}">Anasayfa</a></li>
+                            @auth
+                            <li class="has-mega-menu">
+                                <a href="{{ route('users.profile') }}">Profilim</a>
+                            </li>
+                            @endauth
                         </ul>
                     </div>
                 </div>
