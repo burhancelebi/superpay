@@ -44,7 +44,7 @@
                                                     <span class="text-success fw-bold"><i class="far fa-hourglass"></i> {{ $task->duration }} dakika</span>
                                                 </div>
                                             </div>
-                                            <a href="job-detail.html" class="twm-job-title">
+                                            <a href="{{ route('tasks.detail', $task->id) }}" class="twm-job-title">
                                                 <h4>{{ $task->title }}</h4>
                                             </a>
                                             <p class="twm-job-address">{{ \Illuminate\Support\Str::limit($task->description) }}</p>

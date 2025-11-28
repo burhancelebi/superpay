@@ -102,22 +102,27 @@
                             <div class="twm-how-t-get-section-left">
                                 <div class="section-head left wt-small-separator-outer">
                                     <div class="wt-small-separator site-text-primary">
-                                        <div>How to get your job</div>
+                                        <div>Akıllı Yatırım Çözümleri</div>
                                     </div>
-                                    <h2 class="wt-title">Build Your Personal Account Profile</h2>
-                                    <p>Create an account for job information that you wanted, get notification
-                                        everyday and you can easily apply directly to the company you want
-                                        create and account now for free.</p>
+                                    <h2 class="wt-title">Birikimlerinize Değer Katın</h2>
+                                    <p>Sermayenizi uzman sistemlerimizle yönetiyoruz.
+                                        Bütçenizi sisteme ekleyin,
+                                        gerekli işlem süreçleri tamamlandıktan sonra ana paranızı,
+                                        elde edilen kâr payı ile birlikte güvenle hesabınıza geri çekin.</p>
                                 </div>
                                 <div class="twm-how-t-get-bottom">
-                                    <a href="about-1.html" class="site-button">Edit Profile</a>
+                                    @auth
+                                        <a href="{{ route('tasks.index') }}" class="site-button">Şimdi Kazanmaya Başla</a>
+                                    @else
+                                        <a href="{{ route('auth.login-page') }}" class="site-button">Şimdi Kazanmaya Başla</a>
+                                    @endauth
                                     <div class="twm-left-icon-bx">
                                         <div class="twm-left-icon-media site-bg-primary">
                                             <i class="flaticon-bell site-text-white"></i>
                                         </div>
                                         <div class="twm-left-icon-content">
-                                            <h4 class="icon-title">New Interview</h4>
-                                            <p>You has new interview today</p>
+                                            <h4 class="icon-title">Yeni İşlem Başarılı</h4>
+                                            <p>Kazancınız hesabınıza gönderildi</p>
                                         </div>
                                     </div>
                                 </div>
@@ -134,18 +139,18 @@
                                         <img src="https://thewebmax.org/jobzilla/images/home-7/img-bx/pic1.jpg" alt="#">
                                     </div>
                                     <div class="twm-left-img-content">
-                                        <h4 class="icon-title">Complete your profile</h4>
-                                        <p>95% Completed</p>
+                                        <h4 class="icon-title">Hedef Kazanç</h4>
+                                        <p>%100 Tamamlandı</p>
                                     </div>
                                 </div>
                                 <div class="twm-profile-card bounce2">
                                     <div class="twm-profile-pic"><img src="https://thewebmax.org/jobzilla/images/home-7/img-bx/pic3.jpg" alt="#"></div>
                                     <div class="twm-profile-info">
                                         <h4 class="twm-profile-name">
-                                            Devid Smith
+                                            Ahmet Yılmaz
                                         </h4>
-                                        <div class="twm-profile-position">UI/UX Designer</div>
-                                        <a class="site-button-link underline">Hire Me!</a>
+                                        <div class="twm-profile-position">Platin Yatırımcı</div>
+                                        <a class="site-button-link underline badge badge-success text-success">Kazanç Çekildi</a>
                                     </div>
                                 </div>
                             </div>
