@@ -57,6 +57,11 @@
                                     <li class="{{ request()->routeIs('users.profile') ? 'active' : '' }}">
                                         <a href="{{ route('users.profile') }}"><i class="fa fa-user"></i> Profilim</a>
                                     </li>
+                                    <li class="{{ request()->routeIs('users.payment-methods') ? 'active' : '' }}">
+                                        <a href="{{ route('users.payment-methods') }}">
+                                            <i class="fa-solid fa-money-check-dollar"></i>
+                                            Ödeme Yöntemlerim</a>
+                                    </li>
                                     <li class="{{ request()->routeIs('users.transactions') ? 'active' : '' }}">
                                         <a href="{{ route('users.transactions') }}"><i class="fa fa-credit-card"></i>İşlemler</a>
                                     </li>

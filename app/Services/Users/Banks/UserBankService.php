@@ -6,6 +6,7 @@ use App\DTO\Users\UserBankDTO;
 use App\Models\Users\UserBank;
 use App\Repositories\Users\Banks\UserBankRepositoryInterface;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 class UserBankService implements UserBankServiceInterface
 {
@@ -18,9 +19,9 @@ class UserBankService implements UserBankServiceInterface
 
     /**
      * @param int $userId
-     * @return Collection
+     * @return LengthAwarePaginator
      */
-    public function getByUserId(int $userId): Collection
+    public function getByUserId(int $userId): LengthAwarePaginator
     {
         return $this->userBankRepository->getByUserId($userId);
     }

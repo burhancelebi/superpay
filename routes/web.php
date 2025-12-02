@@ -12,6 +12,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::prefix('users')->as('users.')->group(function () {
     Route::middleware(['auth', UserActiveMiddleware::class])->group(function () {
         Route::get('profile', [UserController::class, 'profile'])->name('profile');
+        Route::get('payment-methods', [UserController::class, 'paymentMethods'])->name('payment-methods');
         Route::get('transactions', [UserController::class, 'transactions'])->name('transactions');
     });
 });
